@@ -302,6 +302,6 @@ After we create the keystore, and once that is done, the rest of creating the wa
         console . error ( error ) ; 
     } ) ;
 ## Errors and contributions
-For a bug, write the problem directly on github issues or send it to miguel@lomeli.io . If you want to contribute to the project please send an email.
+For a bug, write the problem directly on github issues or send it to info@ouchestechnology.com.ng . If you want to contribute to the project please send an email.
 
-#MiguelLomeli , #MiguelLomeli , #Lomeli , #Toopago , #ethereum , #tokens , #wallets , #erc20
+#OuchesTech , #OuchesTechnology , #ethereum , #tokens , #wallets , #erc20
