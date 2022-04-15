@@ -1,6 +1,6 @@
 {
-    "name": "erc20-wallet",
-    "version": "1.0.5",
+    "name": "erc20-address-wallet",
+    "version": "1.0.1",
     "description": "ERC20 Wallet (erc20 wallet example: usdt)",
     "main": "build/index.js",
     "repository": {
