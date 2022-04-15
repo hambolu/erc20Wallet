@@ -5,50 +5,51 @@ It is a package to be able to work with tokens and ethereum, to send and receive
 Facility
 Install from npm:
 
-## npm i erc20-wallet -s
+## npm i erc20-address-wallet
 Then we need to import the package into our project
 
-let erc20 = require( ' erc20-wallet ' ) ;
+const erc20 = require('erc20-address-wallet');
 Once we import it now if we can start working with it.
 
 ## First time startup configuration
 1.- The first thing we must do is create the 12-word seed. In order to create it, we must enter a password and an alphanumeric word to encrypt the seed with those parameters. That seed the user must save it since with it he restores the wallet at any time. First we create the password and the alphanumeric word as follows:
 
-erc20 . password  =  'mypassword' ; 
-erc20 . mySeed  =  'myalphanumericword8989' ;
+erc20.password  =  'mypassword'; 
+erc20.mySeed  =  'myalphanumericword8989';
 After entering my password and my alphanumeric word, we continue to create the seed as follows:
 
-     await erc20 . createSeed ( ) . then ( ( response )  =>  { 
-        erc20 . seed  =  response ; 
-    } ) . catch ( ( error )  =>  { 
-        console . error ( error ) ; 
-    } ) ;
+     await erc20.createSeed().then((response) => { 
+        erc20.seed = response; 
+    }).catch((error) => { 
+        console.error(error); 
+    });
 Note: I recommend you save the seed in the erc20.seed variable since we will need it to create the keystore or the wallet later on.
 
 Now we have to create the keystore or the wallet, the first time we create it we must save it in a file locally so that later we only send it to call and do not create the seed or a new wallet. It is created as follows:
 
-     await erc20 . createdStored ( ) . then ( ( response )  =>  { 
-        erc20 . keystore  =  response ; 
-    } ) . catch ( ( error )  =>  { 
-        console . error ( error ) ; 
-    } ) ;
+     await erc20.createdStored().then((response) => { 
+       erc20.keystore = response;
+       console.log(response)
+    }).catch((error) => { 
+        console.log(error); 
+    });
 We must store the response in the erc20.keystore variable since we will call it later.
 
 Now we have to create the ethereum addresses, here we must define the number of wallets to create and then call the method to create them, to configure the amount is as follows:
 
-erc20 . numAddr  =  10 ;
+erc20.numAddr = 10;
 
- await erc20 . generateAddress ( ) . then ( ( response )  =>  { 
-     erc20 . address  =  response ; 
-} ) . catch ( ( error )  =>  { 
-     console . error ( error ) ; 
-} ) ;
+ await erc20.generateAddress().then((response) => {
+     erc20.address = response;
+}).catch((error) => {
+    console.error(error);
+});
 This will create 10 wallets and return a json as follows:
 
 [  
-  {  address : '0xxxxxxxxxxxxxxxxxxxxxxxxxxx'  } , 
-  {  address : '0xxxxxxxxxxxxxxxxxxxxxxxxxx'  } , 
-  {  address : '0xxxxxxxxxxxxxxxxxxxxxxxxxxx'  } 
+  { address:'0xxxxxxxxxxxxxxxxxxxxxxxxxxx' } ,
+  { address:'0xxxxxxxxxxxxxxxxxxxxxxxxxx' } ,
+  { address:'0xxxxxxxxxxxxxxxxxxxxxxxxxxx' }
 ]
 Once this process is finished, we continue with the step where the seed was already created, the wallets and addresses were created, now we only need to save the keystore in a local file, since we will send that file to call every time we need to do something , these previous steps, are only the first time that everything is configured. The following is with the keystore saved in the file.
 
