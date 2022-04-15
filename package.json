@@ -2,7 +2,7 @@
     "name": "erc20-address-wallet",
     "version": "1.0.1",
     "description": "ERC20 Wallet (erc20 wallet example: usdt)",
-    "main": "build/index.js",
+    "main": "lib/index.js",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/hambolu/erc20Wallet.git"
